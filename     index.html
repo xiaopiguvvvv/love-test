@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#12090c">
+<title>测测你有多渣｜恋爱人格测试</title>
+<style>
+:root{--bg:#10090c;--panel:#1c1015;--panel2:#27131b;--red:#ff3155;--pink:#ff7188;--text:#fff2f4;--muted:#c4aab1;--line:#4b2632}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#35111d 0,#160b10 45%,#0b080a 100%);color:var(--text);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;min-height:100vh}
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 44px}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;letter-spacing:2px;margin-bottom:24px}
+.logo{color:var(--red);font-weight:900;letter-spacing:3px}
+.badge{border:1px solid #743044;border-radius:99px;padding:6px 10px}
+.hero,.card,.result{border:1px solid var(--line);background:linear-gradient(145deg,rgba(44,20,29,.96),rgba(20,12,16,.98));border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.28)}
+.hero{padding:28px 22px;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,49,85,.1);filter:blur(45px);top:-100px;right:-40px}
+.eyebrow{color:var(--pink);font-size:12px;letter-spacing:4px;font-weight:bold}
+h1{font-size:clamp(30px,7vw,48px);line-height:1.15;margin:14px 0 10px;font-weight:900}
+h1 span{color:var(--red);text-shadow:0 0 24px rgba(255,49,85,.3)}
+.subtitle{color:var(--muted);line-height:1.8;font-size:14px;max-width:480px;margin:0 auto}
+.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.pill{font-size:12px;color:#f8c9d2;background:#351721;border:1px solid #6a2b3d;border-radius:99px;padding:7px 11px}
+.btn{appearance:none;border:0;border-radius:14px;background:linear-gradient(110deg,#ff3155,#bd1237);color:white;font-weight:800;font-size:16px;padding:15px 22px;cursor:pointer;box-shadow:0 10px 26px rgba(255,49,85,.22);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn.secondary{background:#301720;border:1px solid #673041;box-shadow:none;color:#ffe5e9}
+.notice{color:#987d85;font-size:11px;line-height:1.7;margin-top:15px}
+.card{padding:22px;margin-top:16px}
+.hidden{display:none!important}
+.progress-row{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;margin-bottom:12px}
+.progress{height:5px;background:#3b202a;border-radius:99px;overflow:hidden;margin-bottom:22px}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff3155,#ff91a4);transition:width .2s}
+.q-label{font-size:11px;letter-spacing:3px;color:var(--pink);font-weight:bold}
+.question{font-size:22px;line-height:1.5;margin:12px 0 20px;font-weight:800}
+.options{display:grid;gap:10px}
+.option{width:100%;text-align:left;background:#211219;border:1px solid #4b2632;border-radius:15px;padding:15px;color:var(--text);cursor:pointer;display:flex;gap:12px;align-items:flex-start;line-height:1.55;font-size:15px}
+.option .letter{flex:0 0 28px;width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:#3a1924;color:#ff91a4;font-weight:900}
+.option:hover,.option.selected{border-color:var(--red);background:#35131f}
+.option.selected .letter{background:var(--red);color:white}
+.nav{display:flex;gap:10px;margin-top:22px}.nav .btn{flex:1}
+.result{text-align:center;padding:28px 22px;margin-top:16px}
+.result-icon{font-size:48px;margin:8px 0}
+.result-type{font-size:12px;letter-spacing:4px;color:var(--pink)}
+.result h2{font-size:clamp(28px,6vw,40px);margin:10px 0}
+.result .desc{color:#e2cbd1;line-height:1.9;font-size:15px;text-align:left;background:#170d12;border:1px solid #43212d;border-radius:16px;padding:18px;margin:20px 0}
+.result .tagline{color:#ff9aab;font-size:14px;margin:8px 0 18px}
+.share-tip{font-size:12px;color:var(--muted);line-height:1.8;margin-top:16px}
+.footer{text-align:center;color:#725b63;font-size:11px;line-height:1.8;padding:24px 8px}
+@media(min-width:600px){.hero{padding:42px 36px}.card{padding:30px}.result{padding:38px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="logo">LOVE / DARK</div><div class="badge">恋爱人格实验室</div></div>
+  <section id="home" class="hero">
+    <div class="eyebrow">RELATIONSHIP TEST · VOL.01</div>
+    <h1>测测你有多<span>渣</span>？</h1>
+    <p class="subtitle">别急着给自己发好人卡。25道情境选择题，看看你在暧昧、边界和承诺面前，到底是什么恋爱人格。</p>
+    <div class="pills"><span class="pill">✦ 25道情境题</span><span class="pill">✦ 不显示分数</span><span class="pill">✦ 自动生成结果</span></div>
+    <button class="btn" id="startBtn">开始测试 →</button>
+    <p class="notice">娱乐向自我观察测试，不是专业心理诊断。请按真实想法作答，没有所谓标准答案。</p>
+  </section>
+
+  <section id="quiz" class="card hidden">
+    <div class="progress-row"><span id="counter">QUESTION 01 / 25</span><span id="percent">4%</span></div>
+    <div class="progress"><span id="bar"></span></div>
+    <div class="q-label" id="qLabel">QUESTION 01</div>
+    <div class="question" id="questionText"></div>
+    <div class="options" id="options"></div>
+    <div class="nav">
+      <button class="btn secondary" id="prevBtn">← 上一题</button>
+      <button class="btn" id="nextBtn" disabled>下一题 →</button>
+    </div>
+  </section>
+
+  <section id="result" class="result hidden">
+    <div class="result-type">YOUR LOVE PERSONALITY</div>
+    <div class="result-icon" id="resultIcon">🖤</div>
+    <h2 id="resultTitle">你的恋爱人格</h2>
+    <div class="tagline" id="resultTagline"></div>
+    <div class="desc" id="resultDesc"></div>
+    <button class="btn" id="againBtn">再测一次 ↻</button>
+    <p class="share-tip">想分享结果？可以截图保存这一页。<br>结果仅供娱乐，请结合真实行为理解自己。</p>
+  </section>
+  <div class="footer">LOVE / DARK · 仅供娱乐与自我反思<br>本网页为测试原型，尚未接入付款或付费权限验证。</div>
+</div>
+<script>
+const questions = [
+["一段关系刚开始，对方明显比你更上头，你通常会？", ["先享受相处，不急着给关系下定义，也不刻意改变节奏。", "会回应对方的热情，但心里还在观察自己到底有多喜欢。", "如果相处舒服，就让关系自然升温，暂时不谈太远的事。", "会留一点距离，看看对方喜欢的是我本人，还是追逐的感觉。"]],
+["前任深夜发来一句“最近过得好吗”，你第一反应更像？", ["先看自己当下的状态，再决定要不要重新打开话题。", "会好奇对方为什么突然联系，但不代表想复合。", "如果聊天还是熟悉又舒服，可能会多聊一会儿。", "会先简单回应，看看对方接下来到底想说什么。"]],
+["一个你不讨厌、但也没那么心动的人持续示好，你会？", ["接受对方的好意，但会留意自己有没有给出超出本意的信号。", "不急着判断，想看看相处久一点会不会有新的感觉。", "只要相处不累，就先维持现状，没必要太快做决定。", "会享受被照顾的感觉，不过不想因此立刻承担承诺。"]],
+["暧昧对象问你“你是不是也在接触别人”，你会？", ["会先问对方为什么在意，再决定把自己的情况说到什么程度。", "觉得还没确认关系，彼此都有空间，但不想故意误导。", "会如实说明大致状态，同时确认双方对暧昧的理解是否一致。", "不太想把话说死，除非对方明确提出彼此的期待。"]],
+["你和伴侣闹矛盾时，恰好有人特别懂你，你会？", ["可以倾诉，但会留意自己是不是在把情绪依赖转移给对方。", "先让自己冷静下来，等情绪过去再判断这份理解意味着什么。", "会自然地想多和这个人聊聊，毕竟被理解很难得。", "会把注意力放回原关系，但不否认自己可能对别人产生好感。"]],
+["你发现自己对伴侣的热情明显下降，通常会？", ["先观察是最近疲惫还是感情变了，不想把短期状态当结论。", "找个合适时机聊聊，但也担心谈开后关系会更难维持。", "会尝试制造一些新鲜感，看看能不能找回以前的感觉。", "不急着摊牌，等自己更确定之后再决定怎么处理。"]],
+["心情差、觉得没人理解时，你更可能？", ["找信任的人说说，但会避免让对方误以为自己在释放特殊信号。", "更愿意找能快速接住自己情绪的人，关系性质可以之后再想。", "先自己消化一阵，免得把一时脆弱变成长期依赖。", "会联系熟悉的人，因为被惦记能让我很快恢复状态。"]],
+["伴侣对你和某位异性的互动有意见，你会？", ["先弄清楚对方介意的是具体行为，还是对关系缺乏安全感。", "会解释自己的立场，但也会考虑哪些互动可能被合理误解。", "如果我觉得没越界，就不太想因为吃醋改变原本的社交方式。", "愿意调整一部分做法，但不希望这变成以后什么都要报备。"]],
+["你怎么看待“没确认关系前，不需要对任何人负责”？", ["不必承诺排他，但如果知道对方认真了，就该避免刻意制造误会。", "关系没定义之前各有自由，关键是双方有没有说清楚。", "我会看相处中的默契和暗示，不只看有没有正式说出口。", "不喜欢被默认绑定，但也不想用没承诺当成所有事的挡箭牌。"]],
+["如果你只想轻松相处，对方却开始认真规划未来，你会？", ["先听听对方怎么想，也把自己的顾虑说出来。", "会担心说清楚就失去这段关系，所以倾向再观察一下。", "尽量把差异讲明白，让对方有机会自己决定是否继续。", "不想太早破坏现在的舒服感，等对方表达得更明确再说。"]],
+["你发了一条容易让人误会的动态，发现某个暧昧对象点赞，你会？", ["会注意到，但不急着把一个点赞解读成特别的意思。", "可能会顺势聊两句，看看对方是不是也想拉近距离。", "会觉得这种微妙的互动挺有趣，但不一定继续推进。", "如果我也对对方有兴趣，可能会发个只有对方看得懂的回应。"]],
+["恋爱中，你更习惯怎样处理个人空间？", ["重要的事会主动沟通，其他部分希望彼此保留自主权。", "喜欢亲近，但不想让每个空闲时间都变成必须共享的时间。", "更习惯按自己的节奏生活，需要时再解释，不喜欢被追问。", "会根据关系状态调整，有时想黏一点，有时又需要完全独处。"]],
+["稳定关系里突然出现一个很有吸引力的人，你会？", ["承认吸引可能存在，但先决定自己愿意为现有关系守住什么。", "先观察这种心动能持续多久，不想因为一时新鲜做决定。", "会想了解对方更多，再看这份吸引是不是值得认真对待。", "不急着行动，但也不想假装自己完全没有动摇。"]],
+["别人对你特别好，你却不确定是否喜欢对方，你会？", ["享受被照顾的同时，也会留意对方是否把它当成感情投入。", "先相处看看，喜欢有时确实需要时间才能确认。", "会尽量把互动控制在自己舒服的范围，避免欠下情感人情。", "暂时不挑明，除非对方开始期待一个明确答案。"]],
+["对方为你做了很多，而你给不了同等程度的感情，你会？", ["感谢对方，但不把付出当作自己必须回报爱情的理由。", "会因为愧疚多给一点机会，看看感情能不能慢慢长出来。", "不想马上结束，毕竟这段关系也确实给了我很多陪伴。", "会考虑对方能否接受不对等，再决定要不要继续相处。"]],
+["你和暧昧对象聊到伴侣的缺点时，最可能发生什么？", ["会聊自己的困扰，但注意不把对方变成替代伴侣的情绪出口。", "偶尔吐槽能让我舒服些，不过我会看话题有没有逐渐变味。", "会好奇对方怎么看，也可能享受这种只属于两个人的谈话。", "聊到太私密的地方时会停一下，想想如果伴侣知道会怎么理解。"]],
+["一段关系进入平淡期，你通常会？", ["先判断是生活节奏影响，还是两个人真的不再适合。", "会主动安排些新体验，但不认为关系必须一直保持热恋。", "容易怀念刚开始被追求的感觉，也会想知道自己还有没有吸引力。", "给关系一点时间，同时观察自己是不是已经在别处寻找刺激。"]],
+["别人夸你很有魅力、很会拿捏人，你会？", ["会开心，但不希望别人因为猜不透我而陷进去。", "有点受用，也会享受自己在互动里有选择权的感觉。", "会觉得有趣，偶尔也想看看自己能把气氛带到什么程度。", "更在意对方是不是了解真实的我，而不只是被某种技巧吸引。"]],
+["有人当面问你是否单身，但你正处在一段不太稳定的关系里，你会？", ["说明自己目前的关系状态比较复杂，不想让对方误会。", "会先判断这是不是普通社交问题，再决定透露多少细节。", "不想马上关掉可能性，但也不想做出自己无法兑现的暗示。", "会说清楚自己还在处理一段关系，之后再看彼此是否合适。"]],
+["你会如何看待“故意晚回消息”？", ["有时确实需要空间，但不喜欢把回复速度当成试探工具。", "如果感觉对方太急，我可能会放慢节奏，看看彼此是否合拍。", "忙就晚回，不忙也不必秒回，消息不该成为考核。", "偶尔会想等一等，避免自己显得太在意或太容易得到。"]],
+["你发现暧昧对象也在和别人接触，你更可能？", ["先确认彼此有没有说过排他期待，再决定自己是否继续投入。", "会有点失落，但也提醒自己关系还没明确。", "不想显得太在乎，可能会把注意力转回自己的生活和其他人。", "如果自己真的在意，会直接问清楚，而不是靠竞争证明价值。"]],
+["发生争执后，你发现自己确实有做得不妥的地方，你会？", ["先承认具体行为造成的影响，再说明当时自己的想法。", "会先解释背景，希望对方理解我并非有意伤害。", "如果对方也有问题，我可能会等双方都冷静后再谈谁该先道歉。", "会道歉，但也需要确认这件事不会被反复拿来当作压制我的理由。"]],
+["当你知道有人因为你而吃醋，你心里更接近哪种感觉？", ["会在意对方的感受，但不把吃醋直接当作爱的证明。", "多少有点满足，至少说明自己在对方心里有分量。", "会好奇对方在意到什么程度，但不一定想进一步发展。", "可能会觉得自己有影响力，同时也知道不该刻意放大这种情绪。"]],
+["你最容易在什么情况下做出平时不会做的决定？", ["情绪很浓时，反而会提醒自己先缓一缓。", "孤独或压力大时，会更需要有人及时回应自己。", "遇到强烈吸引、被追捧或觉得机会难得时。", "当关系迟迟没有答案，我可能会做些平时不会做的试探。"]],
+["如果测试结果指出你有不太体面的相处习惯，你会？", ["先看具体行为有没有说中，再决定是否值得调整。", "有些地方会认，但也会考虑当时的背景和对方的做法。", "会先觉得好笑，毕竟没人喜欢被一眼看穿。", "如果结果戳中痛点，我可能会嘴上不承认，心里却记住。"]]
+];
+const results = [
+{key:"clear",icon:"🧊",title:"清醒边界管理者",tag:"你不是没欲望，只是不太愿意为一时的感觉付长期账单。",desc:"你通常知道哪些事会让关系变复杂，也懂得把冲动和行动分开。你未必每次都能做到完美，但不太喜欢让别人靠猜来理解你。你的盲点是：太强调理性和边界时，容易把自己包装成永远正确的人；有时你不是没有逃避，只是把逃避说成了“我在认真考虑”。真正的成熟不是永远不犯错，而是愿意承认自己也会自私，并及时把话说清楚。"},
+{key:"observer",icon:"🌫️",title:"温吞观望型选手",tag:"你把“再看看”当缓冲区，别人却可能住在里面出不来。",desc:"你不爱仓促决定，也不喜欢把话说得太绝。你会观察情绪、环境和对方的反应，试图等一个更确定的答案。问题在于，关系不会因为你暂时不表态就暂停计时。你可能没有恶意，却容易让别人把你的犹豫理解成希望。毒舌一点说：你不一定是在挑选最合适的人，也可能是在等一个不用你承担拒绝后果的时机。给自己时间没错，但别把别人当成无限期试用装。"},
+{key:"validation",icon:"🪞",title:"被偏爱上瘾型",tag:"你不一定想拥有每个人，但很难完全不在乎自己是否被选择。",desc:"被惦记、被追求、被优先考虑，会让你很有安全感。即使你对某个人没有那么心动，也可能舍不得放掉那份关注。你擅长把这件事解释成“只是朋友”“顺其自然”或“我又没答应什么”。可如果你明明看见对方在投入，却持续享受对方的期待，你就不再只是被动接受好意。你需要分清：你喜欢的是这个人，还是喜欢自己在对方心里的位置？别把别人的真心当免费充电宝。"},
+{key:"pushpull",icon:"🎭",title:"推拉反复型玩家",tag:"靠近时怕被困住，远离时又怕没人追。",desc:"你可能很吃亲密感，却又对承诺、被看透或失去主动权感到不安。于是关系一热，你就想喘口气；对方真的退开，你又开始在意。你未必有意操控，但你的忽冷忽热会让对方不断复盘自己哪里做错了。最扎心的地方是：你可能把对方追回来的那一刻，当成了自己仍然有魅力的证明。别把不安全感伪装成神秘感，也别要求别人既给你自由，又随时待命。"},
+{key:"flirt",icon:"💋",title:"暧昧气氛操盘手",tag:"你享受的未必是爱情，有时是关系尚未揭晓的那段高光。",desc:"你可能很会聊天、读气氛，也知道什么时候给一点回应、什么时候留一点悬念。暧昧的刺激在于不必立刻负责，却能得到接近恋爱的情绪回报。风险是，你可能把“我没有承诺”当成万能免责条款，却忽略了自己持续释放的信号。嘴上说顺其自然，行动却精准地留住对方，这就不只是无心了。你可以不想恋爱，但最好别把别人对未来的想象当作自己的娱乐项目。"},
+{key:"backup",icon:"♟️",title:"备选项收藏家",tag:"你不想孤单，也不想太早关掉任何一扇门。",desc:"你习惯保留余地：这边不确定，那边先聊着；关系不顺时，至少还有人可以找。你会把这种做法解释成谨慎、现实，甚至是保护自己。可人不是候补名单，也不是你低落时随叫随到的情绪资源。真正的问题不是你认识多少人，而是你是否让不同的人误以为自己拥有独特的位置。你可以慢慢选择，但不能一边享受多份确定感，一边把所有责任都推给“我们又没说清楚”。"},
+{key:"control",icon:"🕹️",title:"情绪主导型掌控者",tag:"你不一定想伤人，但你很在意关系里谁先失去主动。",desc:"你可能很敏锐，能察觉谁更在意、谁更怕失去，也会下意识调整自己的投入来维持优势。你不喜欢被看穿，更不愿意显得自己需要谁。于是你可能把晚回、冷处理、模糊回答当成保护自己的方式。短期看，你似乎掌控局面；长期看，别人会越来越不敢对你说真话。毒舌一句：你以为自己在控场，其实可能只是把一段关系变成了谁先示弱谁就输的比赛。亲密关系不是谈判桌。"},
+{key:"highrisk",icon:"🖤",title:"高危边界试探者",tag:"你知道有些线在哪里，只是在有利可图时会考虑能不能绕过去。",desc:"你的回答里可能更常出现即时满足、保留选择、回避解释或把责任往后放的倾向。这不等于你天生就是坏人，但如果你反复利用信息差，让别人投入而自己不必表态，伤害就不是偶然。你也许很会给自己找理由：没确定关系、当时气氛到了、对方也没问、我只是想看看。每一句单独听都像有道理，拼在一起却可能是一套逃避责任的系统。真正需要警惕的不是你会不会心动，而是你是否总能在享受好处时把自己摘干净。魅力可以让人靠近，不能替你承担后果。"}
+];
+let index=0, answers=Array(questions.length).fill(null);
+const $=id=>document.getElementById(id);
+function renderQuestion(){
+ const q=questions[index]; $("counter").textContent=`QUESTION ${String(index+1).padStart(2,"0")} / ${questions.length}`;
+ $("percent").textContent=`${Math.round((index+1)/questions.length*100)}%`;
+ $("bar").style.width=`${(index+1)/questions.length*100}%`;
+ $("qLabel").textContent=`QUESTION ${String(index+1).padStart(2,"0")}`;
+ $("questionText").textContent=q[0]; $("options").innerHTML="";
+ q[1].forEach((label,i)=>{const b=document.createElement("button");b.className="option"+(answers[index]===i?" selected":"");b.innerHTML=`<span class="letter">${["A","B","C","D"][i]}</span><span>${label}</span>`;b.onclick=()=>{answers[index]=i;renderQuestion()};$("options").appendChild(b)});
+ $("prevBtn").disabled=index===0;$("nextBtn").disabled=answers[index]===null;
+ $("nextBtn").textContent=index===questions.length-1?"查看我的结果 →":"下一题 →";
+}
+function showResult(){
+ // 25道题保留；按不同维度统计作答倾向，不展示分数。
+ // 每道题的四个选项采用不同的隐藏倾向映射，避免固定字母直接对应某种人格。
+ const dims = {
+   clear:[0,1,2,3,4,5,6,7,8,9,12,13,14,15,16,18,19,20,21,23,24],
+   validation:[0,2,6,10,13,14,17,22,24],
+   pushpull:[0,3,5,6,9,11,12,13,16,18,19,20,23],
+   flirt:[0,1,2,3,4,6,8,9,10,12,13,14,15,18,19,20,22,23],
+   backup:[0,1,2,5,8,9,12,14,16,18,20,23],
+   control:[3,5,7,10,11,18,19,20,21,22,24]
+ };
+ const tally = {clear:0,validation:0,pushpull:0,flirt:0,backup:0,control:0};
+ const profiles = [
+   ["clear","observer","validation","pushpull"], ["observer","flirt","clear","backup"],
+   ["clear","observer","backup","validation"], ["control","observer","clear","backup"],
+   ["clear","pushpull","flirt","observer"], ["observer","pushpull","clear","backup"],
+   ["clear","validation","observer","backup"], ["observer","clear","control","pushpull"],
+   ["clear","observer","backup","control"], ["observer","pushpull","clear","backup"],
+   ["observer","flirt","validation","control"], ["clear","observer","control","pushpull"],
+   ["clear","observer","backup","pushpull"], ["validation","observer","clear","backup"],
+   ["clear","observer","backup","validation"], ["clear","observer","flirt","control"],
+   ["observer","clear","validation","backup"], ["clear","validation","control","observer"],
+   ["clear","observer","backup","control"], ["clear","pushpull","observer","control"],
+   ["clear","observer","backup","validation"], ["clear","observer","pushpull","control"],
+   ["clear","validation","flirt","control"], ["clear","validation","backup","pushpull"],
+   ["clear","observer","control","validation"]
+ ];
+ answers.forEach((a,i)=>{
+   if(a===null) return;
+   const trait=profiles[i][a];
+   if(trait==='clear') tally.clear += 1;
+   if(trait==='observer') tally.pushpull += 0.45;
+   if(trait==='validation') tally.validation += 1;
+   if(trait==='pushpull') tally.pushpull += 1;
+   if(trait==='flirt') tally.flirt += 1;
+   if(trait==='backup') tally.backup += 1;
+   if(trait==='control') tally.control += 1;
+   if(trait==='backup' && dims.backup.includes(i)) tally.backup += 0.25;
+ });
+ // 结果按最明显倾向生成；保留一定混合型判定，避免仅靠单一答案贴标签。
+ const ranked = [
+  {key:"highrisk",score:tally.flirt+tally.backup*0.8+tally.control*0.7},
+  {key:"flirt",score:tally.flirt+tally.validation*0.45},
+  {key:"backup",score:tally.backup+tally.validation*0.35},
+  {key:"control",score:tally.control+tally.pushpull*0.25},
+  {key:"validation",score:tally.validation+tally.pushpull*0.3},
+  {key:"pushpull",score:tally.pushpull+tally.control*0.2},
+  {key:"observer",score:answers.filter(a=>a===1).length},
+  {key:"clear",score:tally.clear}
+ ].sort((a,b)=>b.score-a.score);
+ let resultKey=ranked[0].key;
+ const two=answers.filter(a=>a===2).length, one=answers.filter(a=>a===1).length;
+ if(two<=4 && one>=12) resultKey="observer";
+ else if(two<=5 && answers.filter(a=>a===0).length>=15) resultKey="clear";
+ else if(ranked[0].score-ranked[1].score<1.5) resultKey=one>=10?"pushpull":"validation";
+ const result=results.find(r=>r.key===resultKey)||results[0];
+ $("resultIcon").textContent=result.icon;$("resultTitle").textContent=result.title;$("resultTagline").textContent=result.tag;$("resultDesc").textContent=result.desc;
+ $("quiz").classList.add("hidden");$("result").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});
+}
+$("startBtn").onclick=()=>{$("home").classList.add("hidden");$("quiz").classList.remove("hidden");index=0;renderQuestion();window.scrollTo({top:0,behavior:"smooth"})};
+$("prevBtn").onclick=()=>{if(index>0){index--;renderQuestion()}};
+$("nextBtn").onclick=()=>{if(answers[index]===null)return;if(index<questions.length-1){index++;renderQuestion()}else showResult()};
+$("againBtn").onclick=()=>{answers=Array(questions.length).fill(null);index=0;$("result").classList.add("hidden");$("home").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})};
+</script>
+</body>
+</html>
